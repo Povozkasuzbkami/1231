@@ -1,0 +1,9 @@
+﻿@model string?
+
+@if (Model is null)
+{
+    ViewData["Title"] = "Ошибка";
+    <h2 class="text-center">Страница не найдена</h2>
+}
+else
+    @Html.Raw(Model)

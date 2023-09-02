@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Металлорай</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                    <img width="151" height="68" src="~/images/logo.jpg" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse">
+                    <div class="navbar-panel">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark">О компании</a>
+                                <div class="block__dropdown">
+                                    <div class="block__dropdown-container">
+                                        <div class="block-list">
+                                            <h5>О компании</h5>
+                                            <ul class="default-list">
+                                                <li><a class="link-default" asp-controller="About" asp-action="History">История</a></li>
+                                                <li><a class="link-default" asp-controller="About" asp-action="Missions">Миссия и ценности</a></li>
+                                                <li><a class="link-default" asp-controller="About" asp-action="Rewards">Награды и достижения</a></li>
+                                                <li><a class="link-default" asp-controller="About" asp-action="Team">Команда</a></li>
+                                                <li><a class="link-default" asp-controller="About" asp-action="Responsibility">Социальная ответственность</a></li>
+                                                <li><a class="link-default" asp-controller="About" asp-action="Security">Безопасность</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark">Продукция</a>
+                                <div class="block__dropdown">
+                                    <div class="block__dropdown-container">
+                                        <div class="block-list">
+                                            <h5>Продукция</h5>
+                                            <ul class="default-list">
+                                                <li><a class="link-default" asp-controller="Products" asp-action="Lithium">Литье и формовка</a></li>
+                                                <li><a class="link-default" asp-controller="Products" asp-action="Metal">Обработка металла</a></li>
+                                                <li><a class="link-default" asp-controller="Products" asp-action="Product">Готовая продукция</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark">Карьера</a>
+                                <div class="block__dropdown">
+                                    <div class="block__dropdown-container">
+                                        <div class="block-list">
+                                            <h5>Карьера</h5>
+                                            <ul class="default-list">
+                                                <li><a class="link-default" asp-controller="Career" asp-action="Form">Направить резюме</a></li>
+                                                <li><a class="link-default" asp-controller="Career" asp-action="Schools">Программы для школьников</a></li>
+                                                <li><a class="link-default" asp-controller="Career" asp-action="Contacts">Контакты</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark">Медиа</a>
+                                <div class="block__dropdown">
+                                    <div class="block__dropdown-container">
+                                        <div class="block-list">
+                                            <h5>Медиа</h5>
+                                            <ul class="default-list">
+                                                <li><a class="link-default" asp-controller="Media" asp-action="Guide">Техническое руководство</a></li>
+                                                <li><a class="link-default" asp-controller="Media" asp-action="Gallery">Галерея</a></li>
+                                                <li style="margin: 10px 0;">Соц. сети - <a href="https://vk.com/public222164036">Группа ВКонтакте</a></li>
+                                                <li><a class="link-default" asp-controller="Media" asp-action="FAQ">Вопросы и ответы</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="block-blur"></div>
+    <div class="container-main container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Металлорай
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="~/js/swiper.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
